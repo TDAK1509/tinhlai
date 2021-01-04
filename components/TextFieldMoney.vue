@@ -17,13 +17,13 @@ import { addCommaSeparatorsToNumber } from "@/utils/filters";
 export default {
   name: "TextFieldMoney",
 
-  inheritAttrs: false,
-
   filters: {
     money(amount) {
       return addCommaSeparatorsToNumber(amount);
     }
   },
+
+  inheritAttrs: false,
 
   model: {
     prop: "value",
@@ -52,4 +52,4 @@ export default {
     }
   }
 };
-</scriptgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg>
+</script>
