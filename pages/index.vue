@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <compound-interest-table />
+    <compound-interest-table :data="compoundInterestYearResult" />
   </div>
 </template>
 
@@ -13,6 +13,12 @@ export default Vue.extend({
 
   components: {
     CompoundInterestTable
+  },
+
+  data() {
+    return {
+      compoundInterestYearResult: [10000, 20000, 30000]
+    };
   }
 });
 </script>

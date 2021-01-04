@@ -7,10 +7,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="(monthFinalAmount, index) in compoundInterestYearResult"
-        :key="index"
-      >
+      <tr v-for="(monthFinalAmount, index) in data" :key="index">
         <td class="border border-black">{{ index + 1 }}</td>
         <td class="border border-black">{{ monthFinalAmount | money }}</td>
       </tr>
@@ -30,10 +27,12 @@ export default Vue.extend({
     }
   },
 
-  data() {
-    return {
-      compoundInterestYearResult: [10000, 20000, 30000]
-    };
+  props: {
+    data: {
+      type: Array,
+      required: false,
+      default: () => []
+    }
   }
 });
 </script>
