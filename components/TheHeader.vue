@@ -3,19 +3,45 @@
     <header
       class="mx-auto sm:max-w-screen-lg flex justify-between items-center"
     >
-      <img class="header__img" src="@/assets/logo.png" alt="logo" />
-      <h1 class="ml-8 uppercase font-bold text-2xl">
+      <img class="header__img" src="@/assets/images/logo.png" alt="logo" />
+
+      <h1 class="ml-8 uppercase font-bold text-2xl flex-1">
         Công cụ tính tiền khi đầu tư với lãi kép
       </h1>
-      <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-      <nuxt-link :to="switchLocalePath('vn')">Tiếng Việt</nuxt-link>
+
+      <nuxt-link :to="switchLocalePath('vn')">
+        <img
+          src="@/assets/images/flag-vn.svg"
+          alt="Tiếng Việt"
+          title="Tiếng Việt"
+          :width="flagWidth"
+          :height="flagHeight"
+        />
+      </nuxt-link>
+
+      <nuxt-link :to="switchLocalePath('en')" class="ml-4">
+        <img
+          src="@/assets/images/flag-en.svg"
+          alt="English"
+          title="English"
+          :width="flagWidth"
+          :height="flagHeight"
+        />
+      </nuxt-link>
     </header>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+
+  data() {
+    return {
+      flagWidth: 30,
+      flagHeight: 20
+    };
+  }
 };
 </script>
 
