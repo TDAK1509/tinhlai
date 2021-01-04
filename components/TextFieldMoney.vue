@@ -7,7 +7,7 @@
       v-bind="$attrs"
       v-on="inputListeners"
     />
-    <span class="italic text-xs text-gray-500">{{ value | money }}</span>
+    <span class="italic text-sm text-gray-500">{{ value | money }}</span>
   </div>
 </template>
 
