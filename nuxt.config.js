@@ -60,7 +60,9 @@ export default {
           formInterestRate: "Lãi suất năm (đơn vị %)",
           formYears: "Số năm đầu tư",
           formNumberOnly: "Vui lòng chỉ điền số",
-          formCalculate: "Tính lãi"
+          formCalculate: "Tính lãi",
+          resultTable: "BẢNG KẾT QUẢ:",
+          year: "Năm"
         },
         en: {
           headerTitle: "Compound interest calculator",
@@ -69,7 +71,9 @@ export default {
           formInterestRate: "Yearly interest rate (in %)",
           formYears: "Number of years to invest",
           formNumberOnly: "Only numbers are allowed",
-          formCalculate: "Calculate"
+          formCalculate: "Calculate",
+          resultTable: "RESULT TABLE:",
+          year: "Year"
         }
       }
     }

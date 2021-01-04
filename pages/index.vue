@@ -5,7 +5,7 @@
     <h1
       class="my-8 p-4 uppercase font-bold text-xl text-center bg-blue-800 text-white rounded-md"
     >
-      BẢNG KẾT QUẢ:
+      {{ $t("resultTable") }}
     </h1>
 
     <div
@@ -16,7 +16,9 @@
         :key="index"
         class="w-full sm:max-w-xs"
       >
-        <h1 class="uppercase font-bold mb-2">Năm {{ index + 1 }}</h1>
+        <h1 class="uppercase font-bold mb-2">
+          {{ $t("year") }} {{ index + 1 }}
+        </h1>
         <CompoundInterestTable class="mb-4" :data="yearResult" />
       </div>
     </div>
