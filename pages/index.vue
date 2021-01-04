@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <CompoundInterestForm />
+    <CompoundInterestForm @submit="onCalculate" />
 
-    <template v-for="(yearResult, index) in compoundInterestResults">
+    <template v-for="(yearResult, index) in compoundInterestResult">
       <h1 :key="`table-title-${index}`">Năm {{ index + 1 }}</h1>
       <CompoundInterestTable :key="`table-${index}`" :data="yearResult" />
     </template>
@@ -24,12 +24,15 @@ export default Vue.extend({
 
   data() {
     return {
-      compoundInterestResults: [
-        [10000, 20000, 30000],
-        [10000, 20000, 30000],
-        [10000, 20000, 30000]
-      ] as number[][]
+      compoundInterestResult: [] as number[][]
     };
+  },
+
+  methods: {
+    async onCalculate(compoundInterestResult: number[][]) {
+      this.compoundInterestResult = compoundInterestResult;
+      await Vue.nextTick();
+    }
   }
 });
 </script>

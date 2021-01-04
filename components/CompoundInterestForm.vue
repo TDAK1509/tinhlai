@@ -43,7 +43,9 @@
 <script lang="ts">
 import Vue from "vue";
 import TextField from "@/components/TextField.vue";
-import { CompoundInterestInfo } from "@/utils/compound-interest";
+import CompoundInterestController, {
+  CompoundInterestInfo
+} from "@/utils/compound-interest";
 
 export default Vue.extend({
   name: "CompoundInterestForm",
@@ -74,7 +76,10 @@ export default Vue.extend({
 
   methods: {
     submit() {
-      console.log("submitted", this.compoundInterestInfo);
+      const compoundInterestResult: number[][] = CompoundInterestController.calculate(
+        this.compoundInterestInfo
+      );
+      this.$emit("submit", compoundInterestResult);
     }
   }
 });
