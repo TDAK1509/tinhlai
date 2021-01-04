@@ -1,11 +1,58 @@
 <template>
-  <div class="container">Home</div>
+  <div class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <CompoundInterestForm @submit="onCalculate" />
+
+    <h1
+      class="my-8 p-4 uppercase font-bold text-xl text-center bg-green-500 text-white rounded-md"
+    >
+      BẢNG KẾT QUẢ:
+    </h1>
+
+    <div
+      class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
+    >
+      <div
+        v-for="(yearResult, index) in compoundInterestResult"
+        :key="index"
+        class="w-full sm:max-w-xs"
+      >
+        <h1 class="uppercase font-bold mb-2">Năm {{ index + 1 }}</h1>
+        <CompoundInterestTable class="mb-4" :data="yearResult" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
+import CompoundInterestForm from "@/components/CompoundInterestForm.vue";
+import CompoundInterestTable from "@/components/CompoundInterestTable.vue";
 
 export default Vue.extend({
-  name: 'Home',
-})
+  name: "Home",
+
+  components: {
+    CompoundInterestTable,
+    CompoundInterestForm
+  },
+
+  data() {
+    return {
+      compoundInterestResult: [] as number[][]
+    };
+  },
+
+  computed: {
+    hasResult(): boolean {
+      return this.compoundInterestResult.length > 0;
+    }
+  },
+
+  methods: {
+    async onCalculate(compoundInterestResult: number[][]) {
+      this.compoundInterestResult = compoundInterestResult;
+      await Vue.nextTick();
+    }
+  }
+});
 </script>
