@@ -80,7 +80,6 @@ export default Vue.extend({
 
   methods: {
     submit() {
-      console.log(this.compoundInterestInfo);
       const compoundInterestResult: number[][] = CompoundInterestController.calculate(
         this.compoundInterestInfo
       );
