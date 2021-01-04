@@ -37,7 +37,7 @@
       title="Vui lòng chỉ điền số"
     />
     <button
-      class="p-3 px-6 mt-2 border border-black rounded-lg bg-black text-white hover:bg-white hover:text-black"
+      class="p-3 px-6 mt-2 border border-black rounded-lg bg-blue-800 text-white hover:bg-blue-600"
     >
       Tính lãi kép
     </button>

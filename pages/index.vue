@@ -3,7 +3,7 @@
     <CompoundInterestForm @submit="onCalculate" />
 
     <h1
-      class="my-8 p-4 uppercase font-bold text-xl text-center bg-green-500 text-white rounded-md"
+      class="my-8 p-4 uppercase font-bold text-xl text-center bg-blue-800 text-white rounded-md"
     >
       BẢNG KẾT QUẢ:
     </h1>
