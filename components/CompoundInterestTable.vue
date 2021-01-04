@@ -38,8 +38,9 @@ export default Vue.extend({
 
   data() {
     return {
-      thClasses: "py-2 px-4 border border-black text-left bg-black text-white",
-      tdClasses: "py-2 px-4 border border-black"
+      thClasses:
+        "py-2 px-4 border border-blue-800 text-left bg-blue-800 text-white",
+      tdClasses: "py-2 px-4 border border-blue-800"
     };
   }
 });
