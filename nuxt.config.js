@@ -47,6 +47,22 @@ export default {
     "nuxt-i18n"
   ],
 
+  i18n: {
+    locales: ["en", "vn"],
+    defaultLocale: "vn",
+    vueI18n: {
+      fallbackLocale: "vn",
+      messages: {
+        en: {
+          welcome: "Welcome"
+        },
+        vn: {
+          welcome: "Xin chào"
+        }
+      }
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 };

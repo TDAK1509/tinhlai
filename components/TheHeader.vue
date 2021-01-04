@@ -5,6 +5,8 @@
       <h1 class="ml-8 uppercase font-bold text-2xl">
         Công cụ tính tiền khi đầu tư với lãi kép
       </h1>
+      <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+      <nuxt-link :to="switchLocalePath('vn')">Tiếng Việt</nuxt-link>
     </header>
   </div>
 </template>
