@@ -4,6 +4,7 @@
       v-model="initialAmount"
       class="mb-4"
       label="Số tiền ban đầu"
+      placeholder="1000000"
       required
       pattern="[0-9]+"
       title="Vui lòng chỉ điền số"
@@ -12,14 +13,16 @@
       v-model="monthlyAmount"
       class="mb-4"
       label="Số tiền hàng tháng"
+      placeholder="1000000"
       required
       pattern="[0-9]+"
       title="Vui lòng chỉ điền số"
     />
     <text-field
-      v-model="interestRate"
+      v-model="interestRatePerYear"
       class="mb-4"
-      label="Lãi suất năm"
+      label="Lãi suất năm (đơn vị %)"
+      placeholder="15"
       required
       pattern="[0-9]+"
       title="Vui lòng chỉ điền số"
@@ -28,6 +31,7 @@
       v-model="years"
       class="mb-4"
       label="Số năm đầu tư"
+      placeholder="5"
       required
       pattern="[0-9]+"
       title="Vui lòng chỉ điền số"
@@ -58,7 +62,7 @@ export default Vue.extend({
     return {
       initialAmount: "",
       monthlyAmount: "",
-      interestRate: "",
+      interestRatePerYear: "",
       years: ""
     };
   },
@@ -68,7 +72,7 @@ export default Vue.extend({
       return {
         initialAmount: parseInt(this.initialAmount),
         monthlyAmount: parseInt(this.monthlyAmount),
-        interestRate: parseInt(this.interestRate),
+        interestRatePerYear: parseInt(this.interestRatePerYear) / 100,
         years: parseInt(this.years)
       };
     }
@@ -76,6 +80,7 @@ export default Vue.extend({
 
   methods: {
     submit() {
+      console.log(this.compoundInterestInfo);
       const compoundInterestResult: number[][] = CompoundInterestController.calculate(
         this.compoundInterestInfo
       );

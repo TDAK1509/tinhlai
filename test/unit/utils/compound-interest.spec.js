@@ -5,7 +5,7 @@ describe("utils/compound-interest", () => {
     const compoundInterestInfo = {
       initialAmount: 0,
       monthlyAmount: 100,
-      interestRate: 0.1 / 12,
+      interestRatePerYear: 0.1,
       years: 5
     };
 

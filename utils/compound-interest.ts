@@ -1,7 +1,7 @@
 export interface CompoundInterestInfo {
   initialAmount: number;
   monthlyAmount: number;
-  interestRate: number;
+  interestRatePerYear: number;
   years: number;
 }
 
@@ -12,12 +12,13 @@ export default class CompoundInterest {
     const {
       initialAmount,
       monthlyAmount,
-      interestRate,
+      interestRatePerYear,
       years
     } = compoundInterestInfo;
 
     const result: number[][] = [];
     let currentAmount = initialAmount;
+    const interestRatePerMonth = interestRatePerYear / 12;
 
     for (let year = 1; year <= years; year++) {
       result.push([] as number[]);
@@ -25,7 +26,7 @@ export default class CompoundInterest {
 
       for (let month = 1; month <= 12; month++) {
         currentAmount = CompoundInterest.round2Decimals(
-          (currentAmount + monthlyAmount) * (1 + interestRate)
+          (currentAmount + monthlyAmount) * (1 + interestRatePerMonth)
         );
         result[currentResultIndex].push(currentAmount);
       }
