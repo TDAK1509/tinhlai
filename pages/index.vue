@@ -1,6 +1,10 @@
 <template>
   <div class="container mx-auto">
-    <compound-interest-table :data="compoundInterestYearResult" />
+    <compound-interest-table
+      v-for="(yearResult, index) in compoundInterestResults"
+      :key="index"
+      :data="yearResult"
+    />
   </div>
 </template>
 
@@ -17,7 +21,11 @@ export default Vue.extend({
 
   data() {
     return {
-      compoundInterestYearResult: [10000, 20000, 30000]
+      compoundInterestResults: [
+        [10000, 20000, 30000],
+        [10000, 20000, 30000],
+        [10000, 20000, 30000]
+      ] as number[][]
     };
   }
 });
