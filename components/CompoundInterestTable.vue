@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { addCommaSeparatorsToNumber } from "@/utils/filters";
 
 export default Vue.extend({
   name: "CompoundInterestTable",
@@ -24,7 +25,7 @@ export default Vue.extend({
   filters: {
     money(amount: number) {
       const roundedAmount = Math.round(amount);
-      return roundedAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return addCommaSeparatorsToNumber(roundedAmount);
     }
   },
 
