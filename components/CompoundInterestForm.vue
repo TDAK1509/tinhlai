@@ -1,6 +1,6 @@
 <template>
   <form class="w-96" @submit.prevent="submit">
-    <text-field
+    <TextFieldMoney
       v-model="initialAmount"
       class="mb-4"
       :label="$t('formInitialAmount')"
@@ -9,7 +9,7 @@
       pattern="[0-9]+"
       :title="$t('formNumberOnly')"
     />
-    <text-field
+    <TextFieldMoney
       v-model="monthlyAmount"
       class="mb-4"
       :label="$t('formMonthlyAmount')"
@@ -18,7 +18,7 @@
       pattern="[0-9]+"
       :title="$t('formNumberOnly')"
     />
-    <text-field
+    <TextField
       v-model="interestRatePerYear"
       class="mb-4"
       :label="$t('formInterestRate')"
@@ -27,7 +27,7 @@
       pattern="[0-9]+"
       :title="$t('formNumberOnly')"
     />
-    <text-field
+    <TextField
       v-model="years"
       class="mb-4"
       :label="$t('formYears')"
@@ -46,17 +46,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import TextField from "@/components/TextField.vue";
 import CompoundInterestController, {
   CompoundInterestInfo
 } from "@/utils/compound-interest";
 
 export default Vue.extend({
   name: "CompoundInterestForm",
-
-  components: {
-    TextField
-  },
 
   data() {
     return {

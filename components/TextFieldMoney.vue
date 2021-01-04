@@ -7,12 +7,13 @@
       v-bind="$attrs"
       v-on="inputListeners"
     />
+    <span class="italic text-xs text-gray-500">{{ value }}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TextField",
+  name: "TextFieldMoney",
 
   inheritAttrs: false,
 
