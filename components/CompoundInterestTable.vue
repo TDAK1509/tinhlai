@@ -2,14 +2,14 @@
   <table class="border-collapse w-full">
     <thead>
       <tr>
-        <th class="border border-black">Tháng</th>
-        <th class="border border-black">Số tiền</th>
+        <th :class="thClasses">Tháng</th>
+        <th :class="thClasses">Số tiền</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(monthFinalAmount, index) in data" :key="index">
-        <td class="border border-black">{{ index + 1 }}</td>
-        <td class="border border-black">{{ monthFinalAmount | money }}</td>
+        <td :class="tdClasses">{{ index + 1 }}</td>
+        <td :class="tdClasses">{{ monthFinalAmount | money }}</td>
       </tr>
     </tbody>
   </table>
@@ -23,7 +23,8 @@ export default Vue.extend({
 
   filters: {
     money(amount: number) {
-      return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      const roundedAmount = Math.round(amount);
+      return roundedAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },
 
@@ -33,6 +34,13 @@ export default Vue.extend({
       required: false,
       default: () => []
     }
+  },
+
+  data() {
+    return {
+      thClasses: "p-2 border border-black text-left",
+      tdClasses: "p-2 border border-black"
+    };
   }
 });
 </script>

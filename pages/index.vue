@@ -15,10 +15,10 @@
         <div
           v-for="(yearResult, index) in compoundInterestResult"
           :key="index"
-          class="w-full"
+          class="w-full sm:max-w-xs"
         >
-          <h1>Năm {{ index + 1 }}</h1>
-          <CompoundInterestTable :data="yearResult" />
+          <h1 class="uppercase font-bold mb-2">Năm {{ index + 1 }}</h1>
+          <CompoundInterestTable class="mb-4" :data="yearResult" />
         </div>
       </div>
     </div>
