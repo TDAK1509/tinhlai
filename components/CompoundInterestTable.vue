@@ -12,7 +12,7 @@
         :key="index"
       >
         <td class="border border-black">{{ index + 1 }}</td>
-        <td class="border border-black">{{ monthFinalAmount }}</td>
+        <td class="border border-black">{{ monthFinalAmount | money }}</td>
       </tr>
     </tbody>
   </table>
@@ -23,6 +23,12 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "CompoundInterestTable",
+
+  filters: {
+    money(amount: number) {
+      return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
 
   data() {
     return {
