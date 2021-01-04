@@ -1,31 +1,23 @@
 <template>
-  <div>
+  <div class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <CompoundInterestForm @submit="onCalculate" />
+
     <h1
-      class="mb-8 p-4 uppercase font-bold text-2xl text-center bg-yellow-900 text-white rounded-md"
+      class="my-8 p-4 uppercase font-bold text-xl text-center bg-green-500 text-white rounded-md"
     >
-      Công cụ tính tiền khi đầu tư với lãi kép
+      BẢNG KẾT QUẢ:
     </h1>
 
-    <div class="mx-4 sm:mx-0">
-      <CompoundInterestForm @submit="onCalculate" />
-
-      <h1
-        class="my-8 p-4 uppercase font-bold text-xl text-center bg-green-500 text-white rounded-md"
-      >
-        BẢNG KẾT QUẢ:
-      </h1>
-
+    <div
+      class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
+    >
       <div
-        class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
+        v-for="(yearResult, index) in compoundInterestResult"
+        :key="index"
+        class="w-full sm:max-w-xs"
       >
-        <div
-          v-for="(yearResult, index) in compoundInterestResult"
-          :key="index"
-          class="w-full sm:max-w-xs"
-        >
-          <h1 class="uppercase font-bold mb-2">Năm {{ index + 1 }}</h1>
-          <CompoundInterestTable class="mb-4" :data="yearResult" />
-        </div>
+        <h1 class="uppercase font-bold mb-2">Năm {{ index + 1 }}</h1>
+        <CompoundInterestTable class="mb-4" :data="yearResult" />
       </div>
     </div>
   </div>

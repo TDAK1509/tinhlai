@@ -1,7 +1,6 @@
 <template>
   <div>
-    <label class="font-bold">{{ label }}</label
-    ><br />
+    <label class="block font-bold mb-2">{{ label }}</label>
     <input
       :value="value"
       class="py-2 px-4 w-full border border-gray-400 rounded-md"
