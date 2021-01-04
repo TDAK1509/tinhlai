@@ -3,43 +3,43 @@
     <text-field
       v-model="initialAmount"
       class="mb-4"
-      label="Số tiền ban đầu"
+      :label="$t('formInitialAmount')"
       placeholder="1000000"
       required
       pattern="[0-9]+"
-      title="Vui lòng chỉ điền số"
+      :title="$t('formNumberOnly')"
     />
     <text-field
       v-model="monthlyAmount"
       class="mb-4"
-      label="Số tiền hàng tháng"
+      :label="$t('formMonthlyAmount')"
       placeholder="1000000"
       required
       pattern="[0-9]+"
-      title="Vui lòng chỉ điền số"
+      :title="$t('formNumberOnly')"
     />
     <text-field
       v-model="interestRatePerYear"
       class="mb-4"
-      label="Lãi suất năm (đơn vị %)"
+      :label="$t('formInterestRate')"
       placeholder="15"
       required
       pattern="[0-9]+"
-      title="Vui lòng chỉ điền số"
+      :title="$t('formNumberOnly')"
     />
     <text-field
       v-model="years"
       class="mb-4"
-      label="Số năm đầu tư"
+      :label="$t('formYears')"
       placeholder="5"
       required
       pattern="[0-9]+"
-      title="Vui lòng chỉ điền số"
+      :title="$t('formNumberOnly')"
     />
     <button
-      class="p-3 px-6 mt-2 border border-black rounded-lg bg-blue-800 text-white hover:bg-blue-600"
+      class="p-3 px-6 mt-2 border border-black rounded-lg bg-blue-800 uppercase text-white hover:bg-blue-600"
     >
-      Tính lãi kép
+      {{ $t("formCalculate") }}
     </button>
   </form>
 </template>
