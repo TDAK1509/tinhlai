@@ -7,15 +7,23 @@
       v-bind="$attrs"
       v-on="inputListeners"
     />
-    <span class="italic text-xs text-gray-500">{{ value }}</span>
+    <span class="italic text-xs text-gray-500">{{ value | money }}</span>
   </div>
 </template>
 
 <script>
+import { addCommaSeparatorsToNumber } from "@/utils/filters";
+
 export default {
   name: "TextFieldMoney",
 
   inheritAttrs: false,
+
+  filters: {
+    money(amount) {
+      return addCommaSeparatorsToNumber(amount);
+    }
+  },
 
   model: {
     prop: "value",
@@ -44,4 +52,4 @@ export default {
     }
   }
 };
-</script>
+</scriptgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg>
