@@ -1,21 +1,25 @@
 <template>
   <div class="container mx-auto">
+    <CompoundInterestForm />
+
     <template v-for="(yearResult, index) in compoundInterestResults">
       <h1 :key="`table-title-${index}`">Năm {{ index + 1 }}</h1>
-      <compound-interest-table :key="`table-${index}`" :data="yearResult" />
+      <CompoundInterestTable :key="`table-${index}`" :data="yearResult" />
     </template>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import CompoundInterestForm from "@/components/CompoundInterestForm.vue";
 import CompoundInterestTable from "@/components/CompoundInterestTable.vue";
 
 export default Vue.extend({
   name: "Home",
 
   components: {
-    CompoundInterestTable
+    CompoundInterestTable,
+    CompoundInterestForm
   },
 
   data() {
