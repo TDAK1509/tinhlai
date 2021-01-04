@@ -1,10 +1,9 @@
 <template>
   <div class="container mx-auto">
-    <compound-interest-table
-      v-for="(yearResult, index) in compoundInterestResults"
-      :key="index"
-      :data="yearResult"
-    />
+    <template v-for="(yearResult, index) in compoundInterestResults">
+      <h1 :key="`table-title-${index}`">Năm {{ index + 1 }}</h1>
+      <compound-interest-table :key="`table-${index}`" :data="yearResult" />
+    </template>
   </div>
 </template>
 
