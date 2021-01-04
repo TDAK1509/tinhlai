@@ -54,10 +54,10 @@ export default {
       fallbackLocale: "vn",
       messages: {
         en: {
-          welcome: "Welcome"
+          headerTitle: "Compound interest calculator"
         },
         vn: {
-          welcome: "Xin chào"
+          headerTitle: "Công cụ tính tiền khi đầu tư với lãi kép"
         }
       }
     }

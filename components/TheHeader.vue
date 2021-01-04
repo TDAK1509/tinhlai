@@ -6,7 +6,7 @@
       <img class="header__img" src="@/assets/images/logo.png" alt="logo" />
 
       <h1 class="ml-8 uppercase font-bold text-2xl flex-1">
-        Công cụ tính tiền khi đầu tư với lãi kép
+        {{ $t("headerTitle") }}
       </h1>
 
       <nuxt-link :to="switchLocalePath('vn')">
