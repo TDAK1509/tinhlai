@@ -1,11 +1,27 @@
 <template>
-  <div class="container mx-auto">
-    <CompoundInterestForm @submit="onCalculate" />
+  <div>
+    <h1
+      class="mb-4 p-4 uppercase font-bold text-2xl text-center bg-yellow-900 text-white"
+    >
+      Công cụ tính tiền khi đầu tư với lãi kép
+    </h1>
 
-    <template v-for="(yearResult, index) in compoundInterestResult">
-      <h1 :key="`table-title-${index}`">Năm {{ index + 1 }}</h1>
-      <CompoundInterestTable :key="`table-${index}`" :data="yearResult" />
-    </template>
+    <div class="mx-4 sm:mx-0">
+      <CompoundInterestForm @submit="onCalculate" />
+
+      <div
+        class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
+      >
+        <div
+          v-for="(yearResult, index) in compoundInterestResult"
+          :key="index"
+          class="w-full"
+        >
+          <h1>Năm {{ index + 1 }}</h1>
+          <CompoundInterestTable :data="yearResult" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

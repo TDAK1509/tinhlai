@@ -1,5 +1,5 @@
 <template>
-  <table class="table-auto border-collapse">
+  <table class="border-collapse w-full">
     <thead>
       <tr>
         <th class="border border-black">Tháng</th>

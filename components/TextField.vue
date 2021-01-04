@@ -4,7 +4,7 @@
     ><br />
     <input
       :value="value"
-      class="py-2 px-4 border border-gray-400 rounded-md"
+      class="py-2 px-4 w-full border border-gray-400 rounded-md"
       type="text"
       v-bind="$attrs"
       v-on="inputListeners"
@@ -46,6 +46,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

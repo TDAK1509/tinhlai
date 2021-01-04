@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form class="w-96" @submit.prevent="submit">
     <text-field
       v-model="initialAmount"
       class="mb-4"
@@ -37,7 +37,7 @@
       title="Vui lòng chỉ điền số"
     />
     <button
-      class="p-3 border border-black rounded-lg bg-black text-white hover:bg-white hover:text-black"
+      class="p-3 px-6 mt-2 border border-black rounded-lg bg-black text-white hover:bg-white hover:text-black"
     >
       Tính lãi kép
     </button>
