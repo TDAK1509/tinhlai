@@ -1,13 +1,19 @@
 <template>
   <div>
     <h1
-      class="mb-4 p-4 uppercase font-bold text-2xl text-center bg-yellow-900 text-white"
+      class="mb-8 p-4 uppercase font-bold text-2xl text-center bg-yellow-900 text-white rounded-md"
     >
       Công cụ tính tiền khi đầu tư với lãi kép
     </h1>
 
     <div class="mx-4 sm:mx-0">
       <CompoundInterestForm @submit="onCalculate" />
+
+      <h1
+        class="my-8 p-4 uppercase font-bold text-xl text-center bg-green-500 text-white rounded-md"
+      >
+        BẢNG KẾT QUẢ:
+      </h1>
 
       <div
         class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
@@ -42,6 +48,12 @@ export default Vue.extend({
     return {
       compoundInterestResult: [] as number[][]
     };
+  },
+
+  computed: {
+    hasResult(): boolean {
+      return this.compoundInterestResult.length > 0;
+    }
   },
 
   methods: {
