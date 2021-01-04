@@ -4,9 +4,11 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
 html {
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   box-sizing: border-box;
 }
