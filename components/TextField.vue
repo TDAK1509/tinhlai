@@ -7,7 +7,7 @@
       class="py-2 px-4 border border-gray-400 rounded-md"
       type="text"
       v-bind="$attrs"
-      @input="onInput"
+      v-on="inputListeners"
     />
   </div>
 </template>
@@ -34,9 +34,14 @@ export default {
     }
   },
 
-  methods: {
-    onInput(event) {
-      this.$emit("input", event.target.value);
+  computed: {
+    inputListeners() {
+      const vm = this;
+      return Object.assign({}, this.$listeners, {
+        input(event) {
+          vm.$emit("input", event.target.value);
+        }
+      });
     }
   }
 };

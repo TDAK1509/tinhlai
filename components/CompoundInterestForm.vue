@@ -1,13 +1,37 @@
 <template>
   <form @submit.prevent="submit">
-    <text-field v-model="initialAmount" class="mb-4" label="Số tiền ban đầu" />
+    <text-field
+      v-model="initialAmount"
+      class="mb-4"
+      label="Số tiền ban đầu"
+      required
+      pattern="[0-9]+"
+      title="Vui lòng chỉ điền số"
+    />
     <text-field
       v-model="monthlyAmount"
       class="mb-4"
       label="Số tiền hàng tháng"
+      required
+      pattern="[0-9]+"
+      title="Vui lòng chỉ điền số"
     />
-    <text-field v-model="interestRate" class="mb-4" label="Lãi suất năm" />
-    <text-field v-model="years" class="mb-4" label="Số năm đầu tư" />
+    <text-field
+      v-model="interestRate"
+      class="mb-4"
+      label="Lãi suất năm"
+      required
+      pattern="[0-9]+"
+      title="Vui lòng chỉ điền số"
+    />
+    <text-field
+      v-model="years"
+      class="mb-4"
+      label="Số năm đầu tư"
+      required
+      pattern="[0-9]+"
+      title="Vui lòng chỉ điền số"
+    />
     <button
       class="p-3 border border-black rounded-lg bg-black text-white hover:bg-white hover:text-black"
     >
@@ -30,7 +54,7 @@ export default Vue.extend({
 
   data() {
     return {
-      initialAmount: "aaa",
+      initialAmount: "",
       monthlyAmount: "",
       interestRate: "",
       years: ""
