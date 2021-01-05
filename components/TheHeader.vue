@@ -3,7 +3,13 @@
     <header
       class="mx-auto sm:max-w-screen-lg flex justify-between items-center"
     >
-      <img class="header__img" src="@/assets/images/logo.png" alt="logo" />
+      <img
+        class="header__img"
+        src="@/assets/images/logo-50x50.png"
+        alt="logo"
+        width="50px"
+        height="50px"
+      />
 
       <h1 class="ml-8 uppercase font-bold text-2xl flex-1">
         {{ $t("headerTitle") }}
@@ -52,7 +58,5 @@ export default {
 
 .header__img {
   object-fit: cover;
-  width: 50px;
-  height: 50px;
 }
 </style>
