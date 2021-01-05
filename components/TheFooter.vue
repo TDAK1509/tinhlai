@@ -8,6 +8,7 @@
           :class="linkTextColor"
           href="https://www.freelogodesign.org/"
           target="_blank"
+          rel="noreferrer"
           >Free logo design</a
         >
       </li>
@@ -18,6 +19,7 @@
           href="https://www.flaticon.com/authors/freepik"
           title="Freepik"
           target="_blank"
+          rel="noreferrer"
           >Freepik</a
         >
         from
@@ -26,6 +28,7 @@
           href="https://www.flaticon.com/"
           title="Flaticon"
           target="_blank"
+          rel="noreferrer"
           >www.flaticon.com</a
         >
       </li>
