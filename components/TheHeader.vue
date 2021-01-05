@@ -10,7 +10,7 @@
       />
 
       <h1
-        class="header__title ml-0 sm:ml-8 mt-4 sm:mt-0 uppercase font-bold text-sm sm:text-2xl flex-grow order-3 sm:order-2"
+        class="header__title mt-4 sm:mt-0 uppercase font-bold text-sm sm:text-2xl flex-grow order-3 sm:order-2"
       >
         {{ $t("headerTitle") }}
       </h1>
