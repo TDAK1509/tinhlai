@@ -4,6 +4,7 @@
     <input
       :value="value"
       class="py-2 px-4 w-full border border-gray-400 rounded-md"
+      type="tel"
       v-bind="$attrs"
       v-on="inputListeners"
     />

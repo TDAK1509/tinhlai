@@ -22,6 +22,7 @@
       v-model="interestRatePerYear"
       class="mb-4"
       :label="$t('formInterestRate')"
+      type="tel"
       placeholder="15"
       required
       pattern="[0-9]+"
@@ -31,6 +32,7 @@
       v-model="years"
       class="mb-4"
       :label="$t('formYears')"
+      type="tel"
       placeholder="5"
       required
       pattern="[0-9]+"
