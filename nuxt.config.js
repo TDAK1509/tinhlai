@@ -23,6 +23,12 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
+  pwa: {
+    manifest: {
+      theme_color: "#2C5282"
+    }
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 

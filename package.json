@@ -1,5 +1,6 @@
 {
   "name": "tinhlai.com",
+  "description": "Web app to calculate compound interest investment",
   "version": "1.0.0",
   "private": true,
   "scripts": {
