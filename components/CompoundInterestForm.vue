@@ -81,6 +81,15 @@ export default Vue.extend({
         this.compoundInterestInfo
       );
       this.$emit("submit", compoundInterestResult);
+      this.sendClickEventToGoogleAnalytics();
+    },
+
+    sendClickEventToGoogleAnalytics() {
+      this.$ga.event({
+        eventCategory: "tinhlai",
+        eventAction: "click",
+        eventLabel: "clicked-calculate"
+      });
     }
   }
 });
