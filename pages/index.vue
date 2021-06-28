@@ -1,5 +1,6 @@
 <template>
   <div class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <BackToTopButton />
     <CompoundInterestForm @submit="onCalculate" />
 
     <h4
@@ -29,13 +30,15 @@
 import Vue from "vue";
 import CompoundInterestForm from "@/components/CompoundInterestForm.vue";
 import CompoundInterestTable from "@/components/CompoundInterestTable.vue";
+import BackToTopButton from "@/components/BackToTopButton.vue";
 
 export default Vue.extend({
   name: "Home",
 
   components: {
     CompoundInterestTable,
-    CompoundInterestForm
+    CompoundInterestForm,
+    BackToTopButton
   },
 
   data() {
