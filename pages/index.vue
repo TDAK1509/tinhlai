@@ -1,6 +1,6 @@
 <template>
-  <div class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
-    <BackToTopButton />
+  <div id="main" class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <BackToTopButton @click="goToTop()" />
     <CompoundInterestForm @submit="onCalculate" />
 
     <h4
@@ -57,6 +57,12 @@ export default Vue.extend({
     async onCalculate(compoundInterestResult: number[][]) {
       this.compoundInterestResult = compoundInterestResult;
       await Vue.nextTick();
+    },
+
+    goToTop() {
+      document.getElementById("main")!.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   }
 });
