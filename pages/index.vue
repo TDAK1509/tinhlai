@@ -2,11 +2,11 @@
   <div class="px-4 sm:px-0 mx-auto sm:max-w-screen-lg">
     <CompoundInterestForm @submit="onCalculate" />
 
-    <h1
+    <h4
       class="my-8 p-4 uppercase font-bold text-xl text-center bg-blue-800 text-white rounded-md"
     >
       {{ $t("resultTable") }}
-    </h1>
+    </h4>
 
     <div
       class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center"
@@ -16,9 +16,9 @@
         :key="index"
         class="w-full sm:max-w-xs"
       >
-        <h1 class="uppercase font-bold mb-2">
+        <h4 class="uppercase font-bold mb-2">
           {{ $t("year") }} {{ index + 1 }}
-        </h1>
+        </h4>
         <CompoundInterestTable class="mb-4" :data="yearResult" />
       </div>
     </div>
