@@ -44,7 +44,8 @@ export default {
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-analytics"
+    "@nuxtjs/google-analytics",
+    "@nuxtjs/fontawesome"
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -91,5 +92,11 @@ export default {
 
   googleAnalytics: {
     id: "UA-35267376-1"
+  },
+
+  fontawesome: {
+    icons: {
+      solid: ["faChevronUp"]
+    }
   }
 };
