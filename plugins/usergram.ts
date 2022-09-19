@@ -5,11 +5,11 @@ const usergram = (window as any).usergram || [];
 
 const $usergram: Usergram = {
   sendUse: () => {
-    usergram.push(["send", "Ugo97x-1", "cv", "use"]);
+    usergram.push(["send", "Ugo97x-1", "cv", "use_tinhlai"]);
   },
 
   sendCopy: () => {
-    usergram.push(["send", "Ugo97x-1", "cv", "copy"]);
+    usergram.push(["send", "Ugo97x-1", "cv", "copy_tinhlai"]);
   },
 
   sendPageView: () => {
