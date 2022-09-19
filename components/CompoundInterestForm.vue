@@ -87,7 +87,6 @@ export default Vue.extend({
     this.setFormInputsFromQueryParams();
 
     if (this.formIsReady) {
-      console.log("send copy");
       this.$usergram.sendCopy();
     }
   },
