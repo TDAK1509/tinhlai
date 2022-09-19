@@ -82,6 +82,7 @@ export default Vue.extend({
       );
       this.$emit("submit", compoundInterestResult);
       this.sendClickEventToGoogleAnalytics();
+      this.sendToUsergram();
     },
 
     sendClickEventToGoogleAnalytics() {
@@ -90,6 +91,10 @@ export default Vue.extend({
         eventAction: "click",
         eventLabel: "clicked-calculate"
       });
+    },
+
+    sendToUsergram() {
+      this.$usergram.sendUse();
     }
   }
 });

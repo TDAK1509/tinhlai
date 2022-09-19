@@ -20,7 +20,20 @@ export default {
           "tính, lãi kép, lãi cộng dồn, lãi suất, tiền vay, online, công cụ, bảng tính, tinh, lai kep, lai cong don, lai suat, tien vay, online, cong cu, bang tinh, compound, interest, compound interest, calculate, calculator, tool, investment"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    __dangerouslyDisableSanitizers: ["script"],
+    script: [
+      {
+        hid: "usergram",
+        innerHTML: `(function(){var a=window,b=document,c=a.usergram=a.usergram||[],d,e;
+        c.l||(c.s=(new Date()).getTime(),c.l=!0,d=b.getElementsByTagName('script')[0],
+        e=b.createElement('script'),e.type='text/javascript',e.async=true,
+        e.src='//code.usergram.info/js/usergram.js',d.parentNode.insertBefore(e,d))})();`,
+        type: "text/javascript",
+        charset: "utf-8",
+        defer: true
+      }
+    ]
   },
 
   pwa: {
@@ -33,7 +46,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: "./plugins/usergram", mode: "client" }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
