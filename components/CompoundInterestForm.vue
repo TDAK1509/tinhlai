@@ -72,10 +72,40 @@ export default Vue.extend({
         interestRatePerYear: parseInt(this.interestRatePerYear) / 100,
         years: parseInt(this.years)
       };
+    },
+    formIsReady(): boolean {
+      return (
+        !!this.initialAmount &&
+        !!this.monthlyAmount &&
+        !!this.interestRatePerYear &&
+        !!this.years
+      );
+    }
+  },
+
+  mounted() {
+    this.setFormInputsFromQueryParams();
+
+    if (this.formIsReady) {
+      this.$usergram.sendCopy();
     }
   },
 
   methods: {
+    setFormInputsFromQueryParams() {
+      const {
+        initialAmount,
+        monthlyAmount,
+        interestRatePerYear,
+        years
+      } = this.$route.query;
+
+      this.initialAmount = (initialAmount as string) || "";
+      this.monthlyAmount = (monthlyAmount as string) || "";
+      this.interestRatePerYear = (interestRatePerYear as string) || "";
+      this.years = (years as string) || "";
+    },
+
     submit() {
       const compoundInterestResult: number[][] = CompoundInterestController.calculate(
         this.compoundInterestInfo
@@ -83,6 +113,7 @@ export default Vue.extend({
       this.$emit("submit", compoundInterestResult);
       this.sendClickEventToGoogleAnalytics();
       this.sendToUsergram();
+      this.addParamsToUrl();
     },
 
     sendClickEventToGoogleAnalytics() {
@@ -95,6 +126,18 @@ export default Vue.extend({
 
     sendToUsergram() {
       this.$usergram.sendUse();
+    },
+
+    addParamsToUrl() {
+      const formInputs = {
+        initialAmount: this.initialAmount,
+        monthlyAmount: this.monthlyAmount,
+        interestRatePerYear: this.interestRatePerYear,
+        years: this.years
+      };
+      const url =
+        location.pathname + "?" + new URLSearchParams(formInputs).toString();
+      history.replaceState(history.state, "", url);
     }
   }
 });
