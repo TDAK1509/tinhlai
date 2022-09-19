@@ -83,6 +83,7 @@ export default Vue.extend({
       this.$emit("submit", compoundInterestResult);
       this.sendClickEventToGoogleAnalytics();
       this.sendToUsergram();
+      this.addParamsToUrl();
     },
 
     sendClickEventToGoogleAnalytics() {
@@ -95,6 +96,18 @@ export default Vue.extend({
 
     sendToUsergram() {
       this.$usergram.sendUse();
+    },
+
+    addParamsToUrl() {
+      const formInputs = {
+        initialAmount: this.initialAmount,
+        monthlyAmount: this.monthlyAmount,
+        interestRatePerYear: this.interestRatePerYear,
+        years: this.years
+      };
+      const url =
+        location.pathname + "?" + new URLSearchParams(formInputs).toString();
+      history.replaceState(history.state, "", url);
     }
   }
 });
