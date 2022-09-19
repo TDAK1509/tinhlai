@@ -72,11 +72,24 @@ export default Vue.extend({
         interestRatePerYear: parseInt(this.interestRatePerYear) / 100,
         years: parseInt(this.years)
       };
+    },
+    formIsReady(): boolean {
+      return (
+        !!this.initialAmount &&
+        !!this.monthlyAmount &&
+        !!this.interestRatePerYear &&
+        !!this.years
+      );
     }
   },
 
   mounted() {
     this.setFormInputsFromQueryParams();
+
+    if (this.formIsReady) {
+      console.log("send copy");
+      this.$usergram.sendCopy();
+    }
   },
 
   methods: {
