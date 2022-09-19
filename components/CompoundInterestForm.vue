@@ -1,5 +1,5 @@
 <template>
-  <form class="w-96" @submit.prevent="submit">
+  <form class="w-96" @submit.prevent="onClickSubmit">
     <TextFieldMoney
       v-model="initialAmount"
       class="mb-4"
@@ -87,6 +87,7 @@ export default Vue.extend({
     this.setFormInputsFromQueryParams();
 
     if (this.formIsReady) {
+      this.submitForm();
       this.$usergram.sendCopy();
     }
   },
@@ -106,11 +107,15 @@ export default Vue.extend({
       this.years = (years as string) || "";
     },
 
-    submit() {
+    submitForm() {
       const compoundInterestResult: number[][] = CompoundInterestController.calculate(
         this.compoundInterestInfo
       );
       this.$emit("submit", compoundInterestResult);
+    },
+
+    onClickSubmit() {
+      this.submitForm();
       this.sendClickEventToGoogleAnalytics();
       this.sendToUsergram();
       this.addParamsToUrl();
