@@ -75,7 +75,25 @@ export default Vue.extend({
     }
   },
 
+  mounted() {
+    this.setFormInputsFromQueryParams();
+  },
+
   methods: {
+    setFormInputsFromQueryParams() {
+      const {
+        initialAmount,
+        monthlyAmount,
+        interestRatePerYear,
+        years
+      } = this.$route.query;
+
+      this.initialAmount = (initialAmount as string) || "";
+      this.monthlyAmount = (monthlyAmount as string) || "";
+      this.interestRatePerYear = (interestRatePerYear as string) || "";
+      this.years = (years as string) || "";
+    },
+
     submit() {
       const compoundInterestResult: number[][] = CompoundInterestController.calculate(
         this.compoundInterestInfo
