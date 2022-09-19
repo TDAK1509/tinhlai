@@ -94,8 +94,7 @@ export default Vue.extend({
     },
 
     sendToUsergram() {
-      const usergram = (window as any).usergram || [];
-      usergram.push(["send", "Ugo97x-1", "cv", "use"]);
+      this.$usergram.sendUse();
     }
   }
 });
