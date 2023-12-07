@@ -2,3 +2,4 @@ test
 .eslintrc.js
 jest.config.js
 nuxt.config.js
+js/ga.js
