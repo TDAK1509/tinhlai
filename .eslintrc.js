@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     semi: [2, "always"],
     "comma-dangle": ["error", "never"]
-  }
+  },
+  ignorePatterns: "js/ga.js"
 };
