@@ -32,6 +32,13 @@ export default {
         type: "text/javascript",
         charset: "utf-8",
         defer: true
+      },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-9SKRVR51R1",
+        async: true
+      },
+      {
+        src: "js/ga.js"
       }
     ]
   },
@@ -57,7 +64,6 @@ export default {
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-analytics",
     "@nuxtjs/fontawesome"
   ],
 
@@ -102,10 +108,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
-
-  googleAnalytics: {
-    id: "UA-35267376-1"
-  },
 
   fontawesome: {
     icons: {
