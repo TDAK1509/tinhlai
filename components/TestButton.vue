@@ -1,4 +1,5 @@
 <template>
+   <p>{{ $t('welcome') }}</p>
   <p>Clicked: {{ clicked }}</p>
   <button @click="clicked++">Click me</button>
 </template>
