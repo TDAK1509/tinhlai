@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <TestButton />
-  </div>
+  <TheHeader />
 </template>
