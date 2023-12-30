@@ -1,5 +1,5 @@
 <template>
-  <div class="header mb-8 p-4 text-blue-800 text-center">
+  <div class="header mb-8 p-4 text-cyan-800 text-center">
     <header class="mx-auto sm:max-w-screen-lg flex flex-wrap items-center">
       <img
         class="header__img order-1"
