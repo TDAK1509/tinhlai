@@ -8,7 +8,7 @@
       height="50px"
     />
 
-    <h1 class="header__title">
+    <h1 class="header__title text-3xl font-bold underline">
       {{ $t("headerTitle") }}
     </h1>
 
