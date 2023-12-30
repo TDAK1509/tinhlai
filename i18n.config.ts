@@ -1,12 +1,13 @@
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: "vn",
+  locales: ["en", "vn"],
+  defaultLocale: "vn",
   messages: {
     vn: {
-      welcome: "Xin chào",
+      headerTitle: "Công cụ tính tiền khi đầu tư với lãi kép",
     },
     en: {
-      welcome: "Bienvenue",
+      headerTitle: "Compound interest calculator",
     },
   },
 }));
