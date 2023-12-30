@@ -13,9 +13,6 @@
     </h1>
 
     <div class="header__languages">
-      <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
-      <NuxtLink :to="switchLocalePath('vn')">Français</NuxtLink>
-
       <NuxtLink :to="switchLocalePath('vn')">
         <img
           src="@/assets/images/flag-vn.svg"
