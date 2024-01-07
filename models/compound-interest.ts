@@ -1,21 +1,10 @@
-export interface CompoundInterestInfo {
-  initialAmount: number;
-  monthlyAmount: number;
-  interestRatePerYear: number;
-  years: number;
-}
-
 export default class CompoundInterest {
   public static calculate(
-    compoundInterestInfo: CompoundInterestInfo
+    initialAmount: number,
+    monthlyAmount: number,
+    interestRatePerYear: number,
+    years: number
   ): number[][] {
-    const {
-      initialAmount,
-      monthlyAmount,
-      interestRatePerYear,
-      years
-    } = compoundInterestInfo;
-
     const result: number[][] = [];
     let currentAmount = initialAmount;
     const interestRatePerMonth = interestRatePerYear / 12;

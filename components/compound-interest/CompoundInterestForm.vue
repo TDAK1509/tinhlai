@@ -5,7 +5,6 @@
       class="mb-4"
       :label="$t('formInitialAmount')"
       placeholder="1000000"
-      required
       pattern="[0-9]+"
       :title="$t('formNumberOnly')"
     />
@@ -47,9 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-import CompoundInterestController, {
-  CompoundInterestInfo,
-} from "@/models/compound-interest";
+import CompoundInterest from "@/models/compound-interest";
 
 const route = useRoute();
 
@@ -57,10 +54,10 @@ const emit = defineEmits<{
   submit: [compoundInterestResultTable: number[][]];
 }>();
 
-const initialAmount = ref(0);
-const monthlyAmount = ref(0);
-const interestRatePerYear = ref(0);
-const years = ref(0);
+const initialAmount = ref("");
+const monthlyAmount = ref("");
+const interestRatePerYear = ref("");
+const years = ref("");
 
 const formIsReady: ComputedRef<Boolean> = computed(
   () => !!monthlyAmount.value && !!interestRatePerYear.value && !!years.value
@@ -75,22 +72,19 @@ onMounted(() => {
 });
 
 function setFormInputsFromQueryParams() {
-  initialAmount.value = parseInt(route.query.initialAmount as string) || 0;
-  monthlyAmount.value = parseInt(route.query.monthlyAmount as string) || 0;
-  interestRatePerYear.value =
-    parseInt(route.query.interestRatePerYear as string) || 0;
-  years.value = parseInt(route.query.years as string) || 0;
+  initialAmount.value = (route.query.initialAmount as string) || "";
+  monthlyAmount.value = (route.query.monthlyAmount as string) || "";
+  interestRatePerYear.value = (route.query.interestRatePerYear as string) || "";
+  years.value = (route.query.years as string) || "";
 }
 
 function submitForm() {
-  const compoundInterestInfo: CompoundInterestInfo = {
-    initialAmount: initialAmount.value,
-    monthlyAmount: monthlyAmount.value,
-    interestRatePerYear: interestRatePerYear.value / 100,
-    years: years.value,
-  };
-  const compoundInterestResult: number[][] =
-    CompoundInterestController.calculate(compoundInterestInfo);
+  const compoundInterestResult: number[][] = CompoundInterest.calculate(
+    parseInt(initialAmount.value),
+    parseInt(monthlyAmount.value),
+    parseInt(interestRatePerYear.value) / 100,
+    parseInt(years.value)
+  );
   emit("submit", compoundInterestResult);
 }
 

@@ -2,11 +2,13 @@
   <div>
     <label class="block font-bold mb-2">{{ label }}</label>
     <input
+      :value="modelValue"
+      @input="onInput"
       class="py-2 px-4 w-full border border-gray-400 rounded-md"
       type="tel"
       v-bind="$attrs"
     />
-    <span class="italic text-sm text-gray-500">{{ attrs.modelValue }}</span>
+    <span class="italic text-sm text-gray-500">{{ modelValue }}</span>
   </div>
 </template>
 
@@ -18,8 +20,13 @@ defineOptions({
 });
 
 defineProps<{
+  modelValue: string;
   label: string;
 }>();
 
-const attrs = useAttrs();
+const emit = defineEmits(["update:modelValue"]);
+
+function onInput(e: KeyboardEvent) {
+  if (e.target) emit("update:modelValue", (e.target as HTMLInputElement).value);
+}
 </script>
