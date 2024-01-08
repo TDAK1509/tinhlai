@@ -80,7 +80,7 @@ function setFormInputsFromQueryParams() {
 
 function submitForm() {
   const compoundInterestResult: number[][] = CompoundInterest.calculate(
-    parseInt(initialAmount.value),
+    parseInt(initialAmount.value) || 0,
     parseInt(monthlyAmount.value),
     parseInt(interestRatePerYear.value) / 100,
     parseInt(years.value)
