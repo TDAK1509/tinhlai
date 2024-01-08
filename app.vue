@@ -7,6 +7,7 @@
 
   <template v-if="hasResult">
     <h4
+      id="result"
       class="my-8 p-4 uppercase font-bold text-xl text-center text-cyan-800 border-t-2 border-gray-200"
     >
       {{ $t("resultTable") }}
@@ -34,7 +35,12 @@ const compoundInterestResult: Ref<number[][]> = ref([]);
 
 const hasResult = computed(() => compoundInterestResult.value.length > 0);
 
-function onCalculate(result: number[][]) {
+async function onCalculate(result: number[][]) {
   compoundInterestResult.value = result;
+  await nextTick();
+
+  document.getElementById("result")!.scrollIntoView({
+    behavior: "smooth",
+  });
 }
 </script>
