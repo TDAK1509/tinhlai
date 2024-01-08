@@ -2,8 +2,8 @@
   <table class="border-collapse w-full">
     <thead>
       <tr>
-        <th :class="thClasses">Tháng</th>
-        <th :class="thClasses">Số tiền</th>
+        <th :class="thClasses">{{ $t("month") }}</th>
+        <th :class="thClasses">{{ $t("amount") }}</th>
       </tr>
     </thead>
     <tbody>

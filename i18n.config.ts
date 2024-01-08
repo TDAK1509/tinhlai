@@ -11,6 +11,8 @@ export default defineI18nConfig(() => ({
       formCalculate: "Tính lãi",
       resultTable: "BẢNG KẾT QUẢ:",
       year: "Năm",
+      month: "Tháng",
+      amount: "Số tiền",
     },
     en: {
       headerTitle: "Compound interest calculator",
@@ -22,6 +24,8 @@ export default defineI18nConfig(() => ({
       formCalculate: "Calculate",
       resultTable: "RESULT TABLE:",
       year: "Year",
+      month: "Month",
+      amount: "Amount",
     },
   },
 }));
