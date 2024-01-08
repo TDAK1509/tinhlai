@@ -2,6 +2,7 @@
   <TheHeader />
 
   <main id="main" class="px-4 mb-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <BackToTopButton @click="goToTop()" />
     <CompoundInterestForm @submit="onCalculate" />
 
     <template v-if="hasResult">
@@ -40,6 +41,12 @@ async function onCalculate(result: number[][]) {
   await nextTick();
 
   document.getElementById("result")!.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+function goToTop() {
+  document.getElementById("main")!.scrollIntoView({
     behavior: "smooth",
   });
 }
