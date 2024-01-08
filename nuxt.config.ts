@@ -7,4 +7,12 @@ export default defineNuxtConfig({
     defaultLocale: "vn",
     vueI18n: "./i18n.config.ts",
   },
+  build: {
+    transpile: [
+      "@fortawesome/vue-fontawesome",
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/free-brands-svg-icons",
+    ],
+  },
+  css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 });
