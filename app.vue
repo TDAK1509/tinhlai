@@ -7,7 +7,7 @@
 
   <template v-if="hasResult">
     <h4
-      class="my-8 p-4 uppercase font-bold text-xl text-center text-blue-800 border-t-2 border-gray-200"
+      class="my-8 p-4 uppercase font-bold text-xl text-center text-cyan-800 border-t-2 border-gray-200"
     >
       {{ $t("resultTable") }}
     </h4>

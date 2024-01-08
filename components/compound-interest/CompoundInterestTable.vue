@@ -21,6 +21,6 @@ defineProps<{
 }>();
 
 const thClasses =
-  "py-2 px-4 border border-blue-800 text-left bg-blue-800 text-white";
-const tdClasses = "py-2 px-4 border border-blue-800";
+  "py-2 px-4 border border-cyan-800 text-left bg-cyan-800 text-white";
+const tdClasses = "py-2 px-4 border border-cyan-800";
 </script>

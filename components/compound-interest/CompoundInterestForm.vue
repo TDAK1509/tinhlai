@@ -38,7 +38,7 @@
       :title="$t('formNumberOnly')"
     />
     <button
-      class="p-3 px-6 mt-2 border border-black rounded-lg bg-blue-800 uppercase text-white hover:bg-blue-600"
+      class="p-3 px-6 mt-2 border border-black rounded-lg bg-cyan-800 uppercase text-white hover:bg-cyan-600"
     >
       {{ $t("formCalculate") }}
     </button>
