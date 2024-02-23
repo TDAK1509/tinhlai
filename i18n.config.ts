@@ -13,6 +13,7 @@ export default defineI18nConfig(() => ({
       year: "Năm",
       month: "Tháng",
       amount: "Số tiền",
+      urlCopiedToClipboard: "Liên kết đã được sao chép để chia sẻ",
     },
     en: {
       headerTitle: "Compound interest calculator",
@@ -26,6 +27,7 @@ export default defineI18nConfig(() => ({
       year: "Year",
       month: "Month",
       amount: "Amount",
+      urlCopiedToClipboard: "URL is copied to clipboard",
     },
   },
 }));

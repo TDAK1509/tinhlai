@@ -31,6 +31,7 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n();
 const snackbar = useSnackbar();
 
 const compoundInterestResult: Ref<number[][]> = ref([]);
@@ -56,7 +57,7 @@ function copyUrl() {
   navigator.clipboard.writeText(location.href);
   snackbar.add({
     type: "success",
-    text: "URL is copied to clipboard",
+    text: t("urlCopiedToClipboard"),
   });
 }
 </script>
