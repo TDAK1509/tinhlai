@@ -1,6 +1,6 @@
 <template>
   <main id="main" class="px-4 mb-4 sm:px-0 mx-auto sm:max-w-screen-lg">
-    <CopyLinkButton @click="copy()" />
+    <CopyLinkButton @click="copyUrl()" />
     <BackToTopButton @click="goToTop()" />
     <CompoundInterestForm @submit="onCalculate" />
 
@@ -50,7 +50,7 @@ function goToTop() {
   });
 }
 
-function copy() {
-  console.log("copy");
+function copyUrl() {
+  navigator.clipboard.writeText(location.href);
 }
 </script>
