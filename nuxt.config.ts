@@ -41,6 +41,12 @@ export default defineNuxtConfig({
     "nuxt-snackbar",
     "@vueuse/nuxt",
   ],
+  buildModules: ["@nuxtjs/pwa"],
+  pwa: {
+    manifest: {
+      theme_color: "#2C5282",
+    },
+  },
   i18n: {
     locales: ["en", "vn"],
     defaultLocale: "vn",
