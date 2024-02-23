@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "nuxt-snackbar",
+    "@vueuse/nuxt",
   ],
   i18n: {
     locales: ["en", "vn"],
