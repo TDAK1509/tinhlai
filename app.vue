@@ -29,6 +29,8 @@
       </div>
     </template>
   </main>
+
+  <TheFooter />
 </template>
 
 <script lang="ts" setup>
