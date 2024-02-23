@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+  modules: [
+    "@nuxtjs/i18n",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "nuxt-snackbar",
+  ],
   i18n: {
     locales: ["en", "vn"],
     defaultLocale: "vn",
@@ -19,6 +24,11 @@ export default defineNuxtConfig({
       wght: "400..700",
       ital: "400..700",
     },
+  },
+  snackbar: {
+    bottom: true,
+    center: true,
+    duration: 3000,
   },
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 });

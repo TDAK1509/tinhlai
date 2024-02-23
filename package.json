@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/vue-fontawesome": "^3.0.5"
+    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "nuxt-snackbar": "^1.0.4"
   }
 }
