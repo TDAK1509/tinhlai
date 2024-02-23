@@ -67,7 +67,6 @@ export default defineNuxtConfig({
   },
   snackbar: {
     bottom: true,
-    center: true,
     duration: 3000,
   },
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
