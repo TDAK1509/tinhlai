@@ -1,5 +1,6 @@
 <template>
   <main id="main" class="px-4 mb-4 sm:px-0 mx-auto sm:max-w-screen-lg">
+    <CopyLinkButton @click="copy()" />
     <BackToTopButton @click="goToTop()" />
     <CompoundInterestForm @submit="onCalculate" />
 
@@ -47,5 +48,9 @@ function goToTop() {
   document.getElementById("main")!.scrollIntoView({
     behavior: "smooth",
   });
+}
+
+function copy() {
+  console.log("copy");
 }
 </script>
