@@ -25,5 +25,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
     "nuxt-snackbar": "^1.0.4"
+  },
+  "packageManager": "pnpm@8.14.1",
+  "volta": {
+    "node": "16.14.2",
+    "pnpm": "8.14.1"
   }
 }
