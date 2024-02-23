@@ -1,5 +1,5 @@
 <template>
-  <form class="w-96" @submit.prevent="onClickSubmit">
+  <form class="w-full" @submit.prevent="onClickSubmit">
     <TextFieldMoney
       v-model="initialAmount"
       class="mb-4"
