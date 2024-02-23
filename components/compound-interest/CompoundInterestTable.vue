@@ -9,7 +9,9 @@
     <tbody>
       <tr v-for="(monthFinalAmount, index) in data" :key="index">
         <td :class="tdClasses">{{ index + 1 }}</td>
-        <td :class="tdClasses">{{ monthFinalAmount }}</td>
+        <td :class="tdClasses">
+          {{ new Intl.NumberFormat().format(monthFinalAmount) }}
+        </td>
       </tr>
     </tbody>
   </table>
