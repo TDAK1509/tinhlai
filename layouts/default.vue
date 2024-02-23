@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <Nuxt />
+  <slot></slot>
   <TheFooter />
 </template>
 
