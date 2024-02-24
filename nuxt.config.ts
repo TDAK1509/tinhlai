@@ -48,6 +48,12 @@ export default defineNuxtConfig({
       description: "Compound interest calculator",
       short_name: "tinhlai",
       theme_color: "#2C5282",
+      icons: [
+        {
+          src: "/icon.png",
+          sizes: "72x72 96x96 128x128 144x144 192x192 256x256 512x512",
+        },
+      ],
     },
   },
   i18n: {
