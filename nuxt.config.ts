@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     "nuxt-snackbar",
     "@vueuse/nuxt",
     "@vite-pwa/nuxt",
+    "@nuxt/test-utils/module",
   ],
   pwa: {
     manifest: {
