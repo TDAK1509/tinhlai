@@ -11,6 +11,10 @@ export default defineNuxtConfig({
           content:
             "tính, lãi kép, lãi cộng dồn, lãi suất, tiền vay, online, công cụ, bảng tính, tinh, lai kep, lai cong don, lai suat, tien vay, online, cong cu, bang tinh, compound, interest, compound interest, calculate, calculator, tool, investment",
         },
+        {
+          name: "theme-color",
+          content: "#2C5282",
+        },
       ],
       __dangerouslyDisableSanitizers: ["script"],
       script: [
