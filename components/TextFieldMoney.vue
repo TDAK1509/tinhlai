@@ -8,7 +8,9 @@
       type="tel"
       v-bind="$attrs"
     />
-    <span class="italic text-sm text-gray-500">{{ modelValue }}</span>
+    <span class="italic text-sm text-gray-500">
+      {{ new Intl.NumberFormat().format(modelValue) }}
+    </span>
   </div>
 </template>
 
