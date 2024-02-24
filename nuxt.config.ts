@@ -40,8 +40,8 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-snackbar",
     "@vueuse/nuxt",
+    "@vite-pwa/nuxt",
   ],
-  buildModules: ["@nuxtjs/pwa"],
   pwa: {
     manifest: {
       theme_color: "#2C5282",
