@@ -1,0 +1,28 @@
+name: Unit test
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.14
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14
+          cache: "pnpm"
+
+      - name: Run test
+        run: pnpm test
