@@ -44,6 +44,9 @@ export default defineNuxtConfig({
   ],
   pwa: {
     manifest: {
+      name: "tinhlai",
+      description: "Compound interest calculator",
+      short_name: "tinhlai",
       theme_color: "#2C5282",
     },
   },
