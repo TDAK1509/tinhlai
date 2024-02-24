@@ -19,16 +19,6 @@ export default defineNuxtConfig({
       __dangerouslyDisableSanitizers: ["script"],
       script: [
         {
-          hid: "usergram",
-          innerHTML: `(function(){var a=window,b=document,c=a.usergram=a.usergram||[],d,e;
-        c.l||(c.s=(new Date()).getTime(),c.l=!0,d=b.getElementsByTagName('script')[0],
-        e=b.createElement('script'),e.type='text/javascript',e.async=true,
-        e.src='//code.usergram.info/js/usergram.js',d.parentNode.insertBefore(e,d))})();`,
-          type: "text/javascript",
-          charset: "utf-8",
-          defer: true,
-        },
-        {
           src: "https://www.googletagmanager.com/gtag/js?id=G-9SKRVR51R1",
           async: true,
         },
