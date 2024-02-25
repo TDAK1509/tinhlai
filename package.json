@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "vitest"
+    "test": "vitest",
+    "ci": "vitest run"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
