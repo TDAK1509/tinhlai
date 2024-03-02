@@ -27,6 +27,15 @@
       pattern="[0-9]+"
       :title="$t('formNumberOnly')"
     />
+    <div class="flex gap-2">
+      <QuickButton
+        v-for="interestRate in ['5', '10', '12', '15', '20']"
+        :key="interestRate"
+        type="button"
+        @click="interestRatePerYear = interestRate"
+        >{{ interestRate }}%</QuickButton
+      >
+    </div>
     <TextField
       v-model="years"
       class="mb-4"
