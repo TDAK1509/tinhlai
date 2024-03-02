@@ -4,7 +4,7 @@
     <input
       :value="modelValue"
       @input="onInput"
-      class="py-2 px-4 w-full border border-gray-400 rounded-md"
+      class="py-2 px-4 w-full border border-gray-700 rounded-md"
       type="tel"
       v-bind="$attrs"
     />
